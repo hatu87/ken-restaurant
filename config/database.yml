@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: ken-restaurant_development
+  username: hatu
+  password: 
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -80,6 +82,7 @@ test:
 #
 production:
   <<: *default
-  database: ken-restaurant_production
-  username: ken-restaurant
+  url: <%= ENV['DATABASE_URL'] %>
+  database: dbgqotcvjosofe
+  username: nmdbmgksrqndbk
   password: <%= ENV['KEN-RESTAURANT_DATABASE_PASSWORD'] %>
