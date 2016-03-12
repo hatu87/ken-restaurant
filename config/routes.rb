@@ -3,8 +3,22 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
 
+  resources :contact
+  resources :home
+
+  # resources :foods
+  resources :menu do
+    get 'show_food', to: 'menu#show_food', on: :collection
+  end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :foods
+    end
+    
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

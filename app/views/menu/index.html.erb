@@ -1,0 +1,55 @@
+<% provide(:title, "Menu") %>
+<div ng-controller="MenuController">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="display-4">
+        Menu
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="btn-group" data-toggle="buttons">
+        <% @sections.each do |section| %>
+        <label class="col-md-3 btn btn-secondary" ng-click="getFoodsBySection(<%= section.id %>)">
+          <%= radio_button 'menu', 'section', section.id %>
+          <%= section.name %>
+        </label>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="dropdown pull-right">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sort by
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button" ng-click="sortFoods(0)">Alphabetical</button>
+          <button class="dropdown-item" type="button" ng-click="sortFoods(1)">Price low to high</button>
+          <button class="dropdown-item" type="button" ng-click="sortFoods(2)">Price hight to low</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 menu card-group">
+
+      <div class="card menu-item" ng-repeat="food in foods">
+        <img class="card-img-top menu-item-image" ng-src="{{food.image_url}}"  />
+        <div class="menu-item-body">
+          <h3 class="card-title menu-item-name">
+          <%= link_to '{{food.name}}', URI::unescape(show_food_menu_index_path(food_id: '{{food.id}}')) %>
+          <!-- <a href="#" class="">{{food.name}}</a> -->
+        </h3>
+          <div class="menu-item-price">{{food.price}} VND</div>
+          <div class="menu-item-rating">
+            <i class="fa fa-star fa-fw" ng-repeat="rate in range(rating) track by $index"></i>
+            <i class="fa fa-star-o" ng-repeat="rate in range(maxRating - rating) track by $index"></i>
+          </div>
+          <!-- <p class=" menu-item-text">{{food.description | words: 5 :true}}</p> -->
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

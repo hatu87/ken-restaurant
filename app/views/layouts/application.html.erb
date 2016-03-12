@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>KenRestaurant</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html ng-app='ken-restaurant'>
+  <head>
+    <title>
+    <%= full_title(yield(:title)) %>
+    </title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' =>
+    true %>
+    
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav id="header" class="navbar navbar-light bg-faded">
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+      &#9776;
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+        <%= link_to "Ken's Restaurant", home_index_path, class: 'navbar-brand' %>
+        
+        <ul class="nav navbar-nav pull-md-right">
+          <li class="nav-item <%= is_active(home_index_path) %>">
+            <%= link_to 'Home', home_index_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item <%= is_active(menu_index_path) %>">
+            <%= link_to 'Menu', menu_index_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item <%= is_active(contact_index_path) %>">
+            <%= link_to 'Contact Us', contact_index_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="content" class="container-fluid">
+      
+          <%= yield %>
+      
+    </div>
+    <nav id="footer" class="navbar navbar-fixed-bottom navbar-light bg-faded">
+      
+      <a class="navbar-brand" href="#">
+        &nbsp;
+      </a>
+      
+    </nav>
 
-<%= yield %>
-
-</body>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' =>
+    true %>
+  </body>
 </html>

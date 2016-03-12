@@ -1,0 +1,96 @@
+<div id="food-detail">
+  <div class="row">
+    <ol class="breadcrumb" style="margin-bottom: 5px;">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ol>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="display-4"><%= @food.name %></div>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div id="food-image" class="col-md-4">
+      <%= image_tag @food.image_url %>
+    </div>
+    <div id="food-info" class="col-md-8">
+      <div class="row">
+        <div class="food-price col-md-6">
+          
+          <h4>
+          
+          <i class="fa fa-money"></i>
+          <%= @food.price %> VND</h4>
+          
+        </div>
+        <div class="col-md-6 pull-left"></div>
+      </div>
+      <div class="row">
+        <fieldset class="form-group row col-md-12">
+          <label for="exampleSelect1" class="form-control-label col-md-2">Quantity</label>
+          <div class="col-md-5" style="padding:6px">
+            <select class="form-control" id="exampleSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </fieldset>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary"><i class="fa fa-cart-plus fa-lg"></i> Add to Cart</button>
+        </div>
+      </div>
+      <div class="food-text lead">
+        <%= @food.description %>
+      </div>
+      <div class="food-rating">
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  <div id="food-reviews" class="row">
+    <div class="col-md-12">
+      <div class="">
+        <i class="fa fa-star fa-fw"></i>
+        <i class="fa fa-star fa-fw"></i>
+        <i class="fa fa-star fa-fw"></i>
+        <i class="fa fa-star fa-fw"></i>
+        <i class="fa fa-star fa-fw"></i>
+      </div>
+      <fieldset class="form-group">
+        <label></label>
+        <input class="form-control" placeholder="Name" />
+      </fieldset>
+      <fieldset class="form-group">
+        <label></label>
+        <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+      </fieldset>
+      <a class="btn btn-success pull-right">Leave a Review</a>
+      
+      
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-md-12">
+      <i class="fa fa-star fa-fw"></i>
+      <i class="fa fa-star fa-fw"></i>
+      <i class="fa fa-star fa-fw"></i>
+      <i class="fa fa-star fa-fw"></i>
+      <i class="fa fa-star fa-fw"></i>
+      Anonymous
+      <span class="pull-right">10 days ago</span>
+      <p>This product was great in terms of quality. I would definitely buy another!</p>
+    </div>
+  </div>
+  
+</div>
