@@ -17,7 +17,7 @@ class Food < ActiveRecord::Base
 
     if is_viewing
       food.view_count += 1
-      food.save
+      food.save!
     end
 
     food
