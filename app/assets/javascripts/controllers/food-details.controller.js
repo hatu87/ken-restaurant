@@ -1,6 +1,7 @@
 (function() {
   'use strict';
-  app.controller('FoodDetailsController', ['$scope', 'FoodService', function($scope, FoodService) {
+
+  function FoodDetailsController($scope, FoodService) {
     $scope.rate = 4;
     $scope.loadComments = function(foodId) {
       $scope.foodId = foodId;
@@ -24,45 +25,17 @@
       return result;
     }
     $scope.postComment = function() {
-        console.log($scope.customer_name + ' - ' + $scope.text);
-        FoodService.postFoodComment($scope.foodId, $scope.newComment.customer_name, $scope.newComment.text, $scope.newComment.rating).success(function(data) {
-          console.log(data);
-          $scope.comments.push(data);
-          $scope.averageRating = calculateAverageRating();
-          $scope.newComment = {}
-        }).error(function(error) {
-          console.log(error);
-        });
-      }
-      // $scope.getFoodsBySection = function(sectionId) {
-      //   $scope.selectedSectionId = sectionId;
-      //   console.log('getting foods by section ' + sectionId);
-      //   FoodService.getFoodsBySection(sectionId).success(function(data) {
-      //     console.log(data);
-      //     $scope.foods = data;
-      //   }).error(function(error) {
-      //     console.log(error);
-      //   });
-      // };
-      // $scope.selectedFood = {};
-      // $scope.selectFood = function(selectedIndex) {
-      //   console.log('rendering selected food ' + selectedIndex);
-      //   // debugger;
-      //   $scope.selectedFood = $scope.foods[selectedIndex];
-      // };
-      // $scope.rating = 4;
-      // $scope.maxRating = 5;
-      // $scope.range = function(number){
-      //   return new Array(number);
-      // }
-      // $scope.sortFoods = function(sortMode) {
-      //   $scope.selectedSortMode = sortMode;
-      //   FoodService.searchFoods($scope.selectedSectionId, sortMode).success(function(data) {
-      //     console.log(data);
-      //     $scope.foods = data;
-      //   }).error(function(error) {
-      //     console.log(error);
-      //   });
-      // }
-  }]);
+      console.log($scope.customer_name + ' - ' + $scope.text);
+      FoodService.postFoodComment($scope.foodId, $scope.newComment.customer_name, $scope.newComment.text, $scope.newComment.rating).success(function(data) {
+        console.log(data);
+        $scope.comments.push(data);
+        $scope.averageRating = calculateAverageRating();
+        $scope.newComment = {}
+      }).error(function(error) {
+        console.log(error);
+      });
+    };
+  }
+  FoodDetailsController.$inject = ['$scope', 'FoodService'];
+  angular.module('ken-restaurant').controller('FoodDetailsController', FoodDetailsController);
 })();

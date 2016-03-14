@@ -1,6 +1,8 @@
 (function() {
   'use strict';
-  app.factory('FoodService', ['$http', function($http) {
+  
+
+  function FoodService($http) {
     var baseUrl = "/api/v1/foods/";
     return {
       getFoodsBySection: function(section_id) {
@@ -48,5 +50,8 @@
         });
       }
     };
-  }]);
+  }
+
+  FoodService.$inject = ['$http'];
+  angular.module('ken-restaurant').factory('FoodService', FoodService);
 })();

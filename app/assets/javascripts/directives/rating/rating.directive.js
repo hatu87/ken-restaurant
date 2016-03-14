@@ -1,6 +1,7 @@
 (function() {
   'use strict';
-  app.directive('myRating', function() {
+
+  function MyRating() {
     var directive = {
       restrict: 'E',
       templateUrl: '/assets/directives/rating/rating.directive.html',
@@ -13,11 +14,15 @@
       bindToController: true
     };
     return directive;
-  }).controller('RatingController', ['$scope', function($scope) {
+  }
+
+  function RatingController() {
     var self = this;
-    self.range = function(number){
+    self.range = function(number) {
       // debugger;
       return new Array(number || 0);
     };
-  }]);
+  };
+  angular.module('ken-restaurant').directive('myRating', MyRating);
+  angular.module('ken-restaurant').controller('RatingController', RatingController);
 })();

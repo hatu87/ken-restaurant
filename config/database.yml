@@ -82,7 +82,7 @@ test:
 #
 production:
   <<: *default
-  url: ec2-54-83-56-31.compute-1.amazonaws.com
+  url: <%= ENV['DATABASE_URL'] %>
   database: dbgqotcvjosofe
   username: nmdbmgksrqndbk
   password: Y7AyX9CfxcemHfWSGXuFAZidTE
