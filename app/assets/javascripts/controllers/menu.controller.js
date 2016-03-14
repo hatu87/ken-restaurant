@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  app.controller('MenuController', ['$scope', 'FoodService', function($scope, FoodService) {
+  angular.module('ken-restaurant').controller('MenuController', ['$scope', 'FoodService', function($scope, FoodService) {
     $scope.name = 'ken';
     $scope.foods = [];
     $scope.selectedSectionId = 0;
