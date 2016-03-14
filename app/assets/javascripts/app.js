@@ -1,1 +1,1 @@
-var app = angular.module('ken-restaurant', ['truncate', 'templates']);
+angular.module('ken-restaurant', ['truncate', 'templates']);
