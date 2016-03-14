@@ -19,6 +19,10 @@
 //= require gmaps/google
 //= require truncate
 //= require angular-ui-bootstrap-tpls
-//= require_tree .
+//= require app
+//= require controllers/menu.controller
+//= require controllers/food-details.controller
+//= require services/food.service
+//= require directives/rating/rating.directive
 
 
