@@ -21,6 +21,7 @@
 //= require angular-ui-bootstrap-tpls
 //= require angular-rails-templates
 //= require_tree ../templates
+//= require contact
 //= require app
 //= require controllers/menu.controller
 //= require controllers/food-details.controller
