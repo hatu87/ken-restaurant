@@ -9,6 +9,8 @@ class OrdersController < ApplicationController
     # new_order.total_price = current_cart.total_price
     new_order.status = 0 # 0 is 
     new_order.delivery_fee = 20000
+    # byebug
+    new_order.is_discount = true if order[:discount_code] == "CODERSCHOOL"
 
     if new_order.save
       current_cart.cart_items.each do |item|
@@ -41,6 +43,6 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:customer_name, :email, :phone, :address)
+      params.require(:order).permit(:customer_name, :email, :phone, :address, :discount_code, :is_discount)
     end
 end

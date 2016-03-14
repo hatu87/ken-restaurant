@@ -9,7 +9,7 @@ class Api::V1::FoodsController < ApplicationController
       @foods = Food.all
     end
     
-    sort_params = ['name asc', 'price asc', 'price desc']
+    sort_params = ['name asc', 'price asc', 'price desc', 'view_count desc']
 
     @foods = @foods.ordered(sort_params[sort_mode])
 

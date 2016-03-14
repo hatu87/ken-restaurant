@@ -8,6 +8,7 @@ class Order < ActiveRecord::Base
   end
 
   def total_price
-    order_items.to_a.sum { |item| item.total_price } + delivery_fee
+    price = order_items.to_a.sum { |item| item.total_price } + delivery_fee
+    price *= 0.5 if is_discount
   end
 end

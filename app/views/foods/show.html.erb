@@ -42,7 +42,7 @@
       <div class="food-text lead">
         <%= @food.description %>
       </div>
-      <my-rating rating="averageRating" max-rating="5"></my-rating>
+      Rating: <my-rating rating="averageRating" max-rating="5"></my-rating> <i class="fa fa-eye"></i> Views: <%= @food.view_count %>
     <% end %>
   </div>
   <div id="food-reviews" class="row">

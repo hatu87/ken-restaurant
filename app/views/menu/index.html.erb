@@ -27,6 +27,7 @@
           <button class="dropdown-item" type="button" ng-click="sortFoods(0)">Alphabetical</button>
           <button class="dropdown-item" type="button" ng-click="sortFoods(1)">Price low to high</button>
           <button class="dropdown-item" type="button" ng-click="sortFoods(2)">Price hight to low</button>
+          <button class="dropdown-item" type="button" ng-click="sortFoods(3)">Most view</button>
         </div>
       </div>
     </div>
@@ -42,9 +43,11 @@
         </h3>
           <div class="menu-item-price"><%= number_to_currency '{{food.price}}', unit: 'VND ', precision: 0 %></div>
           <div class="menu-item-rating">
-            
             <i class="fa fa-star fa-fw" ng-repeat="rate in range(rating) track by $index"></i>
             <i class="fa fa-star-o" ng-repeat="rate in range(maxRating - rating) track by $index"></i>
+          </div>
+          <div class="">
+          <i class="fa fa-eye"></i> {{food.view_count}}
           </div>
         </div>
         

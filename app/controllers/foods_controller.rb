@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   def show
     # current_cart
-    @food = Food.find(params[:id])
+    @food = Food.get_food(params[:id], true)
     @comment = Comment.new
   end
 end

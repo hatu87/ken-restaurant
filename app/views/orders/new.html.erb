@@ -41,6 +41,10 @@
       <label>Address</label>
       <%= f.text_field :address, value: 'test address', class: 'form-control'%>
     </fieldset>
+    <fieldset class="form-group">
+      <label>Coupon Code</label>
+      <%= f.text_field :discount_code, value: 'CODERSCHOOL', class: 'form-control'%>
+    </fieldset>
     <button class="btn btn-danger"><i class="fa fa-cart-arrow-down fa-lg"></i> Checkout</button>
     <% end %>
   </div>

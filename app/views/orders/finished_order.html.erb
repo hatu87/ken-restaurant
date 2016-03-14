@@ -20,7 +20,13 @@
         Delivery Fee
       </li>
       <li class="list-group-item">
-        <span class="label label-primary label-pill pull-right">
+        <span class="label label-warning label-pill pull-right">
+          <%= @order.is_discount ? '50%' : '0%' %>
+        </span>
+        Discount
+      </li>
+      <li class="list-group-item">
+        <span class="label label-danger label-pill pull-right">
           <%= number_to_currency @order.total_price, unit: 'VND ', precision: 0 %>
         </span>
         <strong>Total price </strong>

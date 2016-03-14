@@ -11,4 +11,15 @@ class Food < ActiveRecord::Base
   def average_rating
     comments.to_a.sum { |comment| comment.rating || 0} / comments.count
   end
+
+  def self.get_food(food_id, is_viewing = false)
+    food = find(food_id)
+
+    if is_viewing
+      food.view_count += 1
+      food.save
+    end
+
+    food
+  end
 end
