@@ -1,6 +1,5 @@
 (function() {
   'use strict';
-
   function MyRating() {
     var directive = {
       restrict: 'E',

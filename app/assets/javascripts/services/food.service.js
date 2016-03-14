@@ -1,7 +1,5 @@
 (function() {
   'use strict';
-  
-
   function FoodService($http) {
     var baseUrl = "/api/v1/foods/";
     return {

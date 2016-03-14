@@ -51,6 +51,7 @@ The following **additional** features are implemented:
 * [x] Use Angular JS to search foods in Menu Page, load and post comments in Food Details Page.
 * [x] Implement API at the url /api/v1
 * [x] Implement shopping cart.
+* [x] Change title based on page
 
 The following **known issues**:
 

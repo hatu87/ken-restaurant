@@ -1,6 +1,5 @@
 (function() {
   'use strict';
-
   function FoodDetailsController($scope, FoodService) {
     $scope.rate = 4;
     $scope.loadComments = function(foodId) {

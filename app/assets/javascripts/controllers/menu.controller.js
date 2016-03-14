@@ -1,6 +1,5 @@
 (function() {
   'use strict';
-
   function MenuController($scope, FoodService) {
     $scope.name = 'ken';
     $scope.foods = [];
