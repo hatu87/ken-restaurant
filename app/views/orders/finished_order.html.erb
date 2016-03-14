@@ -53,10 +53,12 @@
     <fieldset class="form-group">
       <label class="col-md-4">Email</label>
       <strong class="col-md-8"><%= @order.email %></strong>
+      <label ><%= @mail_status ? 'Email has been sent to your email.' : 'Error sending email.' %></label>
     </fieldset>
     <fieldset class="form-group">
       <label class="col-md-4">Phone</label>
       <strong class="col-md-8"><%= @order.phone %></strong>
+      <label ><%= @sms_status ? 'SMS has been sent to your mobile phone.' : 'Error sending SMS.' %></label>
     </fieldset>
     <fieldset class="form-group">
       <label class="col-md-4">Address</label>

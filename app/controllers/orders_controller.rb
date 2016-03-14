@@ -18,8 +18,7 @@ class OrdersController < ApplicationController
       end
 
       current_cart.destroy
-      OrderMailer.finished_order_email(new_order).deliver_now
-      send_sms(new_order)
+      
 
       redirect_to order_finished_order_path(new_order.id)
     else
@@ -39,6 +38,18 @@ class OrdersController < ApplicationController
 
   def finished_order
     @order = Order.find(params[:order_id])
+    @sms_status = true
+    @mail_status = true
+    # byebug
+    begin
+    OrderMailer.finished_order_email(@order).deliver_now
+    send_sms(@order)
+    rescue Twilio::REST::RequestError => e
+      @sms_status = false
+    rescue StandardError
+      @mail_status = false
+    end
+
   end
 
   private
