@@ -3,7 +3,7 @@
   function MyRating() {
     var directive = {
       restrict: 'E',
-      templateUrl: "rating.directive.html",
+      templateUrl: "<%= asset_path('rating.directive.html') %>",
       scope: {
         'rating': '=',
         'maxRating': '='
