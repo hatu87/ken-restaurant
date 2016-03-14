@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  app.factory('FoodService', ['$http', function($http) {
+  angular.module('ken-restaurant', ['truncate']).factory('FoodService', ['$http', function($http) {
     var baseUrl = "/api/v1/foods/";
     return {
       getFoodsBySection: function(section_id) {

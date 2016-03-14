@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  app.controller('FoodDetailsController', ['$scope', 'FoodService', function($scope, FoodService) {
+  angular.module('ken-restaurant', ['truncate']).controller('FoodDetailsController', ['$scope', 'FoodService', function($scope, FoodService) {
     $scope.rate = 4;
     $scope.loadComments = function(foodId) {
       $scope.foodId = foodId;

@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  app.directive('myRating', function() {
+  angular.module('ken-restaurant', ['truncate']).directive('myRating', function() {
     var directive = {
       restrict: 'E',
       templateUrl: '/assets/directives/rating/rating.directive.html',
