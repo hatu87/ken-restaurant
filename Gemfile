@@ -39,6 +39,7 @@ gem 'active_model_serializers'
 gem 'responders'
 gem 'ratyrate'
 gem 'angular-ui-bootstrap-rails'
+gem 'angular-rails-templates'
 
 gem 'faker'
 gem 'byebug'
