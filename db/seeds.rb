@@ -8,6 +8,11 @@
 
 Section.delete_all
 Food.delete_all
+Comment.delete_all
+Cart.delete_all
+CartItem.delete_all
+Order.delete_all
+OrderItem.delete_all
 
 section = Section.create(name: 'Breakfast')
 section.foods << Food.create(name: 'Bun Hue', price: 25000, 
@@ -76,3 +81,14 @@ section.foods << Food.create(name: 'Soda chanh', price: 25000,
 section.foods << Food.create(name: 'Tra xanh latte', price: 35000, 
                             image_url: 'http://kinhdoanhcafe.com/wp-content/uploads/2013/04/pha-che-matcha-latte0.jpg',
                             description: Faker::Lorem.paragraph)
+
+# generate comments
+Food.all.each do |food|
+       3.times do
+              food.comments << Comment.create(customer_name: Faker::Name.name, 
+                                          avatar_url: Faker::Avatar.image, 
+                                          text:Faker::Lorem.paragraph, 
+                                          rating: Faker::Number.between(0, 5),
+                                          created_at: Faker::Date.between(2.days.ago, Date.today))
+       end
+end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'menu#index'
 
   resources :contact
   resources :home
@@ -13,9 +13,19 @@ Rails.application.routes.draw do
     get 'show_food', to: 'menu#show_food', on: :collection
   end
 
+  resources :cart_items
+  resources :foods do
+    
+  end
+  resources :orders do
+    get 'finished_order', to: 'orders#finished_order'
+  end
+  
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :foods
+      resources :foods do
+        resources :comments
+      end
     end
     
   end

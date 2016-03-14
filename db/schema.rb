@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310033603) do
+ActiveRecord::Schema.define(version: 20160314032338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "food_id"
+    t.integer  "cart_id"
+    t.integer  "quantity"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "food_id"
+    t.string   "customer_name"
+    t.integer  "rating"
+    t.string   "avatar_url"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "foods", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +48,27 @@ ActiveRecord::Schema.define(version: 20160310033603) do
     t.integer  "section_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "food_id"
+    t.integer  "quantity"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "customer_name"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "email"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "status"
+    t.decimal  "delivery_fee"
   end
 
   create_table "sections", force: :cascade do |t|

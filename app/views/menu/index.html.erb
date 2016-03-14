@@ -38,15 +38,14 @@
         <img class="card-img-top menu-item-image" ng-src="{{food.image_url}}"  />
         <div class="menu-item-body">
           <h3 class="card-title menu-item-name">
-          <%= link_to '{{food.name}}', URI::unescape(show_food_menu_index_path(food_id: '{{food.id}}')) %>
-          <!-- <a href="#" class="">{{food.name}}</a> -->
+          <%= link_to '{{food.name}}', URI::unescape(food_path(id: '{{food.id}}')) %>
         </h3>
-          <div class="menu-item-price">{{food.price}} VND</div>
+          <div class="menu-item-price"><%= number_to_currency '{{food.price}}', unit: 'VND ', precision: 0 %></div>
           <div class="menu-item-rating">
+            
             <i class="fa fa-star fa-fw" ng-repeat="rate in range(rating) track by $index"></i>
             <i class="fa fa-star-o" ng-repeat="rate in range(maxRating - rating) track by $index"></i>
           </div>
-          <!-- <p class=" menu-item-text">{{food.description | words: 5 :true}}</p> -->
         </div>
         
       </div>

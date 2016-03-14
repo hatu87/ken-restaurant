@@ -5,7 +5,7 @@
     $scope.foods = [];
     $scope.selectedSectionId = 0;
     $scope.selectedSortMode = 0;
-
+    
     $scope.getFoodsBySection = function(sectionId) {
       $scope.selectedSectionId = sectionId;
       

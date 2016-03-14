@@ -37,10 +37,12 @@ gem 'angularjs-rails'
 
 gem 'active_model_serializers'
 gem 'responders'
+gem 'ratyrate'
+gem 'angular-ui-bootstrap-rails'
 
 gem 'faker'
-
-
+gem 'byebug'
+gem 'twilio-ruby'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

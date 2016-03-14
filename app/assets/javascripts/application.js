@@ -18,6 +18,7 @@
 //= require underscore
 //= require gmaps/google
 //= require truncate
+//= require angular-ui-bootstrap-tpls
 //= require_tree .
 
 
