@@ -1,4 +1,4 @@
-(function() {
+
   'use strict';
   function MenuController($scope, FoodService) {
     $scope.name = 'ken';
@@ -38,4 +38,3 @@
   }
   MenuController.$inject = ["$scope", "FoodService"];
   angular.module('ken-restaurant').controller('MenuController', MenuController);
-})();
