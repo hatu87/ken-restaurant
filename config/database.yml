@@ -82,7 +82,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: ec2-54-83-56-31.compute-1.amazonaws.com
   database: dbgqotcvjosofe
   username: nmdbmgksrqndbk
-  password: <%= ENV['KEN-RESTAURANT_DATABASE_PASSWORD'] %>
+  password: Y7AyX9CfxcemHfWSGXuFAZidTE
